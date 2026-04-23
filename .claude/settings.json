@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl:*)",
+      "Bash(bash scripts/send_telegram.sh:*)",
+      "Bash(scripts/send_telegram.sh:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(git checkout:*)",
+      "Bash(git switch:*)",
+      "Bash(date:*)",
+      "Bash(mkdir:*)",
+      "WebFetch"
+    ]
+  }
+}

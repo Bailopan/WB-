@@ -1,0 +1,27 @@
+# Источники новостей для ежедневного дайджеста.
+# Правь этот файл, чтобы добавить/убрать ленты — ничего перекомпилировать не нужно.
+# После коммита следующий запуск Routine подхватит изменения.
+
+ai:
+  # Официальные блоги вендоров
+  - name: Anthropic News
+    url: https://www.anthropic.com/news/rss.xml
+  - name: OpenAI Blog
+    url: https://openai.com/blog/rss.xml
+  - name: Google DeepMind Blog
+    url: https://deepmind.google/blog/rss.xml
+  # Русскоязычные хабы
+  - name: Habr — Искусственный интеллект
+    url: https://habr.com/ru/rss/hub/artificial_intelligence/all/?fl=ru
+  - name: Habr — Машинное обучение
+    url: https://habr.com/ru/rss/hub/machine_learning/all/?fl=ru
+  - name: РБК — Тренды (Технологии)
+    url: https://trends.rbc.ru/trends/industry/rss
+
+wildberries:
+  - name: Habr — поиск «wildberries»
+    url: https://habr.com/ru/rss/search/?q=wildberries&target_type=posts&order=date
+  - name: vc.ru — компания Wildberries
+    url: https://vc.ru/rss/company/wildberries
+  - name: РБК — тег Wildberries
+    url: https://www.rbc.ru/v10/ajax/get-news-by-tag-feed/wildberries/rss
