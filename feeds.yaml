@@ -1,27 +1,39 @@
 # Источники новостей для ежедневного дайджеста.
 # Правь этот файл, чтобы добавить/убрать ленты — ничего перекомпилировать не нужно.
 # После коммита следующий запуск Routine подхватит изменения.
+#
+# Приоритет — надёжные ленты, которые редко падают:
+#   1. Google News RSS (search-based) — всегда живой, отфильтровывает шум по запросу
+#   2. Habr — стабильный RU-источник
+#   3. Официальные блоги вендоров — подтягиваем если доступны
+#
+# Если хочешь добавить свой источник — просто дополни список {name, url}.
 
 ai:
-  # Официальные блоги вендоров
-  - name: Anthropic News
-    url: https://www.anthropic.com/news/rss.xml
-  - name: OpenAI Blog
-    url: https://openai.com/blog/rss.xml
-  - name: Google DeepMind Blog
-    url: https://deepmind.google/blog/rss.xml
+  # Google News по AI-запросам: самый надёжный агрегатор, не падает
+  - name: Google News — AI (RU)
+    url: https://news.google.com/rss/search?q=%D0%B8%D1%81%D0%BA%D1%83%D1%81%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9+%D0%B8%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82&hl=ru&gl=RU&ceid=RU:ru
+  - name: Google News — Claude / Anthropic
+    url: https://news.google.com/rss/search?q=Claude+Anthropic&hl=ru&gl=RU&ceid=RU:ru
+  - name: Google News — OpenAI / ChatGPT
+    url: https://news.google.com/rss/search?q=OpenAI+OR+ChatGPT&hl=ru&gl=RU&ceid=RU:ru
   # Русскоязычные хабы
   - name: Habr — Искусственный интеллект
     url: https://habr.com/ru/rss/hub/artificial_intelligence/all/?fl=ru
   - name: Habr — Машинное обучение
     url: https://habr.com/ru/rss/hub/machine_learning/all/?fl=ru
-  - name: РБК — Тренды (Технологии)
-    url: https://trends.rbc.ru/trends/industry/rss
+  # Официальные блоги (могут иногда отвечать 403 — это ок, digest не упадёт)
+  - name: OpenAI Blog
+    url: https://openai.com/blog/rss.xml
+  - name: Google DeepMind Blog
+    url: https://deepmind.google/blog/rss.xml
 
 wildberries:
+  # Google News — основной источник, стабильно работает
+  - name: Google News — Wildberries
+    url: https://news.google.com/rss/search?q=Wildberries&hl=ru&gl=RU&ceid=RU:ru
+  - name: Google News — WB (маркетплейс)
+    url: https://news.google.com/rss/search?q=%22Wildberries%22+%D0%BC%D0%B0%D1%80%D0%BA%D0%B5%D1%82%D0%BF%D0%BB%D0%B5%D0%B9%D1%81&hl=ru&gl=RU&ceid=RU:ru
+  # Habr-поиск
   - name: Habr — поиск «wildberries»
     url: https://habr.com/ru/rss/search/?q=wildberries&target_type=posts&order=date
-  - name: vc.ru — компания Wildberries
-    url: https://vc.ru/rss/company/wildberries
-  - name: РБК — тег Wildberries
-    url: https://www.rbc.ru/v10/ajax/get-news-by-tag-feed/wildberries/rss
